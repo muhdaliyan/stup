@@ -1,6 +1,6 @@
-"""arrange ml — ML project with experiment tracking & MLflow."""
+"""stup ml — ML project with experiment tracking & MLflow."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

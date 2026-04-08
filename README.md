@@ -1,19 +1,19 @@
-# arrange
+# stup
 
 > 🚀 Scaffold production-ready project structures in seconds. Install once, scaffold forever.
 
 ```bash
-pip install arrange
+pip install stup
 ```
 
 ## Foundation Commands
 
-### `arrange uv`
+### `stup uv`
 
 Bootstraps a complete uv Python project. Run this first before any template.
 
 ```bash
-$ arrange uv
+$ stup uv
 ```
 
 - `uv init` — creates pyproject.toml and project skeleton
@@ -21,20 +21,28 @@ $ arrange uv
 - `uv venv` — creates virtual environment
 - Prints activation command (cross-platform)
 
-### `arrange activate`
+### `stup activate`
 
 Smart cross-platform venv activator — detects your shell and prints the right command.
 
 - **Windows PowerShell:** `.venv\Scripts\Activate`
 - **Linux/Mac bash/zsh:** `source .venv/bin/activate`
 
+### `stup add <packages>`
+
+Add packages using `uv` and automatically maintain a clean `requirements.txt`.
+
+```bash
+$ stup add requests pandas
+```
+
 ---
 
 ## Template Commands
 
-Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick your template.
+Each template builds on top of `stup uv`. Run `stup uv` first, then pick your template.
 
-### `arrange react-fastapi`
+### `stup react-fastapi`
 
 | | |
 |---|---|
@@ -43,7 +51,7 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add fastapi uvicorn alembic` \| `npm install react tailwindcss vite` |
 | **Structure** | `frontend/` `backend/` `docker-compose.yml` `.env` |
 
-### `arrange notebook`
+### `stup notebook`
 
 | | |
 |---|---|
@@ -52,25 +60,25 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add ipykernel pandas numpy matplotlib` |
 | **Structure** | `notebooks/` `data/raw/` `data/processed/` |
 
-### `arrange mern`
+### `stup openai-agent`
 
 | | |
 |---|---|
-| **Description** | MongoDB + Express + React + Node full-stack app with concurrently dev script |
-| **Stack** | JavaScript (MongoDB, Express, React, Node) |
-| **Installs** | `npm install express mongoose dotenv` \| `npm install react react-router-dom axios` |
-| **Structure** | `client/` `server/` `.env` (PORT, MONGO_URI) |
+| **Description** | Modern OpenAI agent with function calling (tools), environment config, and helper stubs |
+| **Stack** | Python (OpenAI SDK, python-dotenv) |
+| **Installs** | `uv add openai python-dotenv` |
+| **Structure** | `agent.py` `tools/` `.env` (OPENAI_API_KEY) |
 
-### `arrange mean`
+### `stup lang-agent`
 
 | | |
 |---|---|
-| **Description** | MongoDB + Express + Angular + Node — same as MERN but with Angular 17 + TypeScript |
-| **Stack** | JavaScript + TypeScript (MongoDB, Express, Angular) |
-| **Installs** | `npm install @angular/cli express mongoose cors` |
-| **Structure** | `client/` (Angular) `server/` (Express) `proxy.conf.json` |
+| **Description** | LangGraph AI agent with tool stubs, memory/checkpointing, and Ollama config |
+| **Stack** | Python (LangGraph, LangChain, Ollama) |
+| **Installs** | `uv add langgraph langchain-community` |
+| **Structure** | `agent.py` `tools/` `memory/` `.env` (OLLAMA_BASE_URL) |
 
-### `arrange django`
+### `stup django`
 
 | | |
 |---|---|
@@ -79,16 +87,7 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add django djangorestframework celery redis python-decouple` |
 | **Structure** | `config/` `apps/users/` `apps/api/` `tasks/` `.env` |
 
-### `arrange next-django`
-
-| | |
-|---|---|
-| **Description** | Next.js 14 frontend + Django REST backend with JWT auth pre-wired |
-| **Stack** | Python + JavaScript (Next.js, DRF, SimpleJWT, axios) |
-| **Installs** | `uv add djangorestframework-simplejwt` \| `npm install next axios jwt-decode` |
-| **Structure** | `frontend/` (Next.js) `backend/` (Django) `.env` |
-
-### `arrange ml`
+### `stup ml`
 
 | | |
 |---|---|
@@ -97,16 +96,7 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add scikit-learn torch mlflow` |
 | **Structure** | `data/` `models/` `experiments/runs/` `experiments/configs/` |
 
-### `arrange agent`
-
-| | |
-|---|---|
-| **Description** | LangGraph AI agent with tool stubs, memory/checkpointing, and Ollama config |
-| **Stack** | Python (LangGraph, LangChain, Ollama) |
-| **Installs** | `uv add langgraph langchain-community` |
-| **Structure** | `agent.py` `tools/` `memory/` `.env` (OLLAMA_BASE_URL, model) |
-
-### `arrange scraper`
+### `stup scraper`
 
 | | |
 |---|---|
@@ -115,7 +105,7 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add playwright beautifulsoup4 pandas schedule` + `playwright install chromium` |
 | **Structure** | `spider.py` `pipeline.py` `data/raw/` `data/cleaned/` |
 
-### `arrange cli`
+### `stup cli`
 
 | | |
 |---|---|
@@ -124,75 +114,34 @@ Each template builds on top of `arrange uv`. Run `arrange uv` first, then pick y
 | **Installs** | `uv add typer rich` |
 | **Structure** | `src/<project>/` `commands/` `pyproject.toml` `README.md` |
 
-### `arrange api`
-
-| | |
-|---|---|
-| **Description** | Minimal FastAPI microservice with auth middleware stub and OpenAPI docs at /docs |
-| **Stack** | Python (FastAPI, Pydantic, uvicorn) |
-| **Installs** | `uv add fastapi uvicorn pydantic` |
-| **Structure** | `main.py` `routers/v1/` `routers/health/` `models/` `middleware/` |
-
-### `arrange saas`
-
-| | |
-|---|---|
-| **Description** | Full SaaS boilerplate — auth, Stripe billing, Celery workers, Redis, Postgres, all Dockerized |
-| **Stack** | Python + JavaScript (Django, React, Stripe, Celery, Redis) |
-| **Installs** | `uv add django stripe celery redis` \| `npm install @stripe/stripe-js` |
-| **Structure** | `backend/auth/` `backend/billing/` `backend/api/` `frontend/` `docker-compose.yml` |
-
-### `arrange docs`
-
-| | |
-|---|---|
-| **Description** | Adds MkDocs + Material theme + auto-docstring config to any existing project |
-| **Stack** | Python (MkDocs, Material theme) |
-| **Installs** | `uv add mkdocs mkdocs-material` |
-| **Structure** | `docs/` `mkdocs.yml` |
-
-### `arrange test`
-
-| | |
-|---|---|
-| **Description** | Scaffolds a full pytest suite — conftest, fixtures, coverage config |
-| **Stack** | Python (pytest, coverage) |
-| **Installs** | `uv add pytest pytest-cov` |
-| **Structure** | `tests/` `conftest.py` `fixtures/` `.coveragerc` |
-
 ---
 
 ## Quick Reference
 
 | Command | Stack | Use Case |
 |---------|-------|----------|
-| `arrange uv` | Python | Start any Python project |
-| `arrange activate` | Python | Activate venv cross-platform |
-| `arrange react-fastapi` | Py + JS | Full-stack web app |
-| `arrange notebook` | Python | Data science / Jupyter |
-| `arrange mern` | JS | MongoDB + React stack |
-| `arrange mean` | JS + TS | MongoDB + Angular stack |
-| `arrange django` | Python | Full Django + Celery API |
-| `arrange next-django` | Py + JS | Next.js + Django + JWT |
-| `arrange ml` | Python | ML project + MLflow |
-| `arrange agent` | Python | LangGraph AI agent |
-| `arrange scraper` | Python | Web scraping pipeline |
-| `arrange cli` | Python | PyPI-ready CLI package |
-| `arrange api` | Python | FastAPI microservice |
-| `arrange saas` | Py + JS | Full SaaS boilerplate |
-| `arrange docs` | Python | MkDocs documentation |
-| `arrange test` | Python | pytest suite scaffold |
+| `stup uv` | Python | Start any Python project |
+| `stup activate` | Python | Activate venv cross-platform |
+| `stup add` | Python | Add deps & sync requirements.txt |
+| `stup react-fastapi` | Py + JS | Full-stack web app |
+| `stup notebook` | Python | Data science / Jupyter |
+| `stup openai-agent` | Python | Modern OpenAI Agent |
+| `stup lang-agent` | Python | LangGraph AI agent |
+| `stup django` | Python | Full Django + Celery API |
+| `stup ml` | Python | ML project + MLflow |
+| `stup scraper` | Python | Web scraping pipeline |
+| `stup cli` | Python | PyPI-ready CLI package |
 
 ---
 
 ## Development
 
 ```bash
-git clone https://github.com/teeon/arrange.git
-cd arrange
+git clone https://github.com/teeon/stup.git
+cd stup
 uv venv
 uv pip install -e ".[dev]"
-arrange --help
+stup --help
 ```
 
 ## License

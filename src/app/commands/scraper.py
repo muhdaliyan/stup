@@ -1,6 +1,6 @@
-"""arrange scraper — Web scraping pipeline with Playwright & BeautifulSoup."""
+"""stup scraper — Web scraping pipeline with Playwright & BeautifulSoup."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

@@ -1,8 +1,8 @@
-"""arrange cli — PyPI-ready CLI package with Typer + Rich."""
+"""stup cli — PyPI-ready CLI package with Typer + Rich."""
 
 import os
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

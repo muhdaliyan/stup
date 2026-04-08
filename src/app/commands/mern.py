@@ -1,6 +1,6 @@
-"""arrange mern — MongoDB + Express + React + Node full-stack scaffold."""
+"""stup mern — MongoDB + Express + React + Node full-stack scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_node,
     create_dirs,
     print_banner,

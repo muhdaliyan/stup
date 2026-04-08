@@ -1,6 +1,6 @@
-"""arrange activate — Smart cross-platform venv activator."""
+"""stup activate — Smart cross-platform venv activator."""
 
-from arrange.utils import (
+from app.utils import (
     console,
     ensure_venv_exists,
     get_activate_command,
@@ -29,5 +29,5 @@ def run_command() -> None:
         console.print(f"    [bold white]{cmd}[/bold white]")
         console.print()
         console.print("  [dim]Or use eval:[/dim]")
-        console.print("    [dim]eval $(arrange activate)[/dim]")
+        console.print("    [dim]eval $(stup activate)[/dim]")
     console.print()

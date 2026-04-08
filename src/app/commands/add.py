@@ -1,7 +1,7 @@
-"""arrange add — Thin wrapper over uv add that maintains requirements.txt."""
+"""stup add — Thin wrapper over uv add that maintains requirements.txt."""
 
 import typer
-from arrange.utils import (
+from app.utils import (
     check_uv,
     ensure_venv_exists,
     print_banner,

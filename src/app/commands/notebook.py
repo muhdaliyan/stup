@@ -1,8 +1,8 @@
-"""arrange notebook — Data science workspace with Jupyter notebooks."""
+"""stup notebook — Data science workspace with Jupyter notebooks."""
 
 import os
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

@@ -1,6 +1,6 @@
-"""arrange saas — Full SaaS boilerplate with Stripe, Celery, Docker."""
+"""stup saas — Full SaaS boilerplate with Stripe, Celery, Docker."""
 
-from arrange.utils import (
+from app.utils import (
     check_node,
     check_uv,
     create_dirs,

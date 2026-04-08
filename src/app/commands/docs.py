@@ -1,6 +1,6 @@
-"""arrange docs — Add MkDocs + Material theme to any project."""
+"""stup docs — Add MkDocs + Material theme to any project."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

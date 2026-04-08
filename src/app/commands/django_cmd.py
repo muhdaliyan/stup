@@ -1,6 +1,6 @@
-"""arrange django — Django + DRF + Celery + Redis + PostgreSQL scaffold."""
+"""stup django — Django + DRF + Celery + Redis + PostgreSQL scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

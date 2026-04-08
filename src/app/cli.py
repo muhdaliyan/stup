@@ -1,10 +1,10 @@
-"""arrange CLI — Main entry point."""
+"""stup CLI — Main entry point."""
 
 import typer
 from rich.console import Console
 
-from arrange import __version__
-from arrange.commands import (
+from app import __version__
+from app.commands import (
     activate,
     add,
     api,
@@ -28,7 +28,7 @@ from arrange.commands import (
 console = Console()
 
 app = typer.Typer(
-    name="arrange",
+    name="stup",
     help="Scaffold production-ready project structures in seconds.",
     add_completion=False,
     rich_markup_mode="rich",
@@ -38,7 +38,7 @@ app = typer.Typer(
 
 def _version_callback(value: bool) -> None:
     if value:
-        console.print(f"[bold cyan]arrange[/bold cyan] v{__version__}")
+        console.print(f"[bold cyan]stup[/bold cyan] v{__version__}")
         raise typer.Exit()
 
 
@@ -48,7 +48,7 @@ def main(
         False, "--version", "-v", help="Show version and exit.", callback=_version_callback, is_eager=True
     ),
 ) -> None:
-    """arrange — Install once, scaffold forever."""
+    """stup — Install once, scaffold forever."""
 
 
 # ── Foundation commands ──────────────────────────────────────────────

@@ -1,6 +1,6 @@
-"""arrange lang-agent — LangGraph AI agent with tool stubs & Ollama config."""
+"""stup lang-agent — LangGraph AI agent with tool stubs & Ollama config."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

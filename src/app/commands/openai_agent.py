@@ -1,6 +1,6 @@
-"""arrange openai-agent — Modern OpenAI AI agent with tool calling."""
+"""stup openai-agent — Modern OpenAI AI agent with tool calling."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

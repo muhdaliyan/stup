@@ -1,6 +1,6 @@
-"""arrange api — Minimal FastAPI microservice scaffold."""
+"""stup api — Minimal FastAPI microservice scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

@@ -1,6 +1,6 @@
-"""arrange test — Scaffold a full pytest suite with coverage."""
+"""stup test — Scaffold a full pytest suite with coverage."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     create_dirs,
     ensure_venv_exists,

@@ -1,6 +1,6 @@
-"""arrange uv — Bootstrap a complete uv Python project."""
+"""stup uv — Bootstrap a complete uv Python project."""
 
-from arrange.utils import (
+from app.utils import (
     check_uv,
     print_activate_hint,
     print_banner,

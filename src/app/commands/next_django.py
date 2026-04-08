@@ -1,6 +1,6 @@
-"""arrange next-django — Next.js 14 + Django REST + JWT auth scaffold."""
+"""stup next-django — Next.js 14 + Django REST + JWT auth scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_node,
     check_uv,
     create_dirs,

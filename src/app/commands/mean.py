@@ -1,6 +1,6 @@
-"""arrange mean — MongoDB + Express + Angular + Node scaffold."""
+"""stup mean — MongoDB + Express + Angular + Node scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_node,
     check_tool,
     create_dirs,

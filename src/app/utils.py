@@ -1,4 +1,4 @@
-"""Shared utilities for arrange CLI."""
+"""Shared utilities for stup CLI."""
 
 import os
 import platform
@@ -19,7 +19,7 @@ console = Console()
 def print_banner(command: str, description: str) -> None:
     """Print a styled banner when a command starts."""
     title = Text()
-    title.append("arrange ", style="bold cyan")
+    title.append("stup ", style="bold cyan")
     title.append(command, style="bold white")
     console.print(Panel(title, subtitle=description, border_style="cyan", padding=(0, 2)))
 
@@ -162,5 +162,5 @@ def print_activate_hint() -> None:
 def ensure_venv_exists() -> None:
     """Check that .venv exists, or create it automatically."""
     if not Path(".venv").exists():
-        from arrange.commands import uv
+        from app.commands import uv
         uv.run_command(silent=True)

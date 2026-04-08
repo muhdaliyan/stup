@@ -1,6 +1,6 @@
-"""arrange react-fastapi — React frontend + FastAPI backend scaffold."""
+"""stup react-fastapi — React frontend + FastAPI backend scaffold."""
 
-from arrange.utils import (
+from app.utils import (
     check_node,
     check_uv,
     create_dirs,
