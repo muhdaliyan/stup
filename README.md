@@ -25,7 +25,7 @@ $ arrange uv
 
 Smart cross-platform venv activator — detects your shell and prints the right command.
 
-- **Windows PowerShell:** `.venv\Scripts\Activate.ps1`
+- **Windows PowerShell:** `.venv\Scripts\Activate`
 - **Linux/Mac bash/zsh:** `source .venv/bin/activate`
 
 ---

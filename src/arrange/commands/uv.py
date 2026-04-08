@@ -9,9 +9,10 @@ from arrange.utils import (
 )
 
 
-def run_command() -> None:
+def run_command(silent: bool = False) -> None:
     """Execute the uv bootstrap sequence."""
-    print_banner("uv", "Bootstrap a complete uv Python project")
+    if not silent:
+        print_banner("uv", "Bootstrap a complete uv Python project")
 
     check_uv()
 
@@ -25,5 +26,6 @@ def run_command() -> None:
     run("uv venv")
 
     # Show activation hint
-    print_activate_hint()
-    print_done()
+    if not silent:
+        print_activate_hint()
+        print_done()

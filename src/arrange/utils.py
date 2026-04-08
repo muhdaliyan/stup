@@ -74,16 +74,21 @@ def run(cmd: str, cwd: str | None = None, capture: bool = False, silent: bool = 
             check=True,
         )
 
-    with console.status(f"  [cyan]▸[/cyan] {msg}", spinner="dots"):
+    # Simplified status without the "Running: " preview
+    with console.status("", spinner="dots"):
         try:
             result = subprocess.run(
                 cmd,
                 shell=True,
                 cwd=cwd or os.getcwd(),
-                capture_output=True, # Always capture to keep CLI clean
+                capture_output=True,
                 text=True,
                 check=True,
             )
+            # Match the image: ✓ uv init
+            # Extract just the main command for the display
+            cmd_display = cmd.split(" --")[0] # Strip flags for cleaner look
+            console.print(f"  [green]✓[/green] {cmd_display}")
             return result
         except subprocess.CalledProcessError as e:
             print_error(f"Command failed: {cmd}")
@@ -142,22 +147,20 @@ def is_windows() -> bool:
 def get_activate_command() -> str:
     """Return the correct venv activation command for the current platform."""
     if is_windows():
-        return r".venv\Scripts\Activate.ps1"
+        return r".venv\Scripts\Activate"
     return "source .venv/bin/activate"
 
 
 def print_activate_hint() -> None:
     """Print how to activate the venv."""
     cmd = get_activate_command()
-    console.print()
     console.print(f"  [green]✓[/green] Environment ready. Activate it with:")
-    console.print(f"    [bold cyan]{cmd}[/bold cyan]")
+    console.print(f"    [bold white]{cmd}[/bold white]")
     console.print()
 
 
 def ensure_venv_exists() -> None:
     """Check that .venv exists, or create it automatically."""
     if not Path(".venv").exists():
-        print_warning("No .venv found. Bootstrapping environment...")
         from arrange.commands import uv
-        uv.run_command()
+        uv.run_command(silent=True)

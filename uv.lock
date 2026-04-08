@@ -5,6 +5,7 @@ requires-python = ">=3.11.14"
 [manifest]
 members = [
     "arrange",
+    "test-minimal",
     "test-scaffold",
 ]
 
@@ -698,6 +699,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e0
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl", hash = "sha256:2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2", size = 10235, upload-time = "2024-02-25T23:20:01.196Z" },
 ]
+
+[[package]]
+name = "test-minimal"
+version = "0.1.0"
+source = { virtual = "test-minimal" }
+dependencies = [
+    { name = "requests" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "requests", specifier = ">=2.33.1" }]
 
 [[package]]
 name = "test-scaffold"

@@ -20,7 +20,16 @@ def run_command(packages: list[str]) -> None:
     pkg_str = " ".join(packages)
     run(f"uv add {pkg_str}")
 
-    # Update requirements.txt for compatibility
-    run("uv export --format requirements-txt --output-file requirements.txt --quiet")
+    # Update requirements.txt for compatibility (clean format)
+    run("uv export --format requirements-txt --no-hashes --no-emit-project --output-file requirements.txt --quiet")
+
+    # Post-process to remove all 'via' comments for a super clean look
+    req_file = "requirements.txt"
+    with open(req_file, "r") as f:
+        lines = f.readlines()
+    with open(req_file, "w") as f:
+        for line in lines:
+            if not line.strip().startswith("#"):
+                f.write(line)
 
     print_done()

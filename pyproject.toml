@@ -48,6 +48,7 @@ testpaths = ["tests"]
 [tool.uv.workspace]
 members = [
     "test-scaffold",
+    "test-minimal",
 ]
 
 [dependency-groups]
