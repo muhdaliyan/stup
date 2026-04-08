@@ -1,0 +1,36 @@
+﻿uv : Traceback (most 
+recent call last):
+At line:1 char:1
++ uv run python -c "from 
+arrange.cli import app; 
+from typer.testing imp ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Tra  
+  ceback (most recent ca   
+ ll last)::String) [],     
+RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  File "<string>", line 1, 
+in <module>
+  File "C:\Users\teeon\AppD
+ata\Roaming\uv\python\cpyth
+on-3.11.14-windows-x86_64-n
+one\Lib\encodings\cp1252.py
+", line 19, in encode
+    return codecs.charmap_e
+ncode(input,self.errors,enc
+oding_table)[0]
+           ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode characters in 
+position 405-406: 
+character maps to 
+<undefined>
